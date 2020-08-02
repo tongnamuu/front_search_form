@@ -15,14 +15,14 @@ FormView.setup = function (el) {
 
 FormView.showResetBtn = function (show = true) {
   this.resetEl.style.display = show ? "block" : "none";
-  console.log(this.resetEl.style.display);
 };
 
 FormView.bindEvents = function () {
-  this.inputEl.addEventListener("keyup", e -> this.onKeyup(e) );
+  this.inputEl.addEventListener("keyup", event -> this.onKeyup(event) );
 };
 
-FormView.onKeyup = function(){
-  this.showResetBtn(this.inputEl.value.length>0?true:false);
-}
+FormView.onKeyup = function () {
+  this.showResetBtn(this.inputEl.value.length);
+};
+
 export default FormView;
