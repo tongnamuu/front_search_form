@@ -13,6 +13,7 @@ FormView.setup = function (el) {
 
 FormView.showResetBtn = function (show = true) {
   this.resetEl.style.display = show ? "block" : "none";
+  console.log(this.resetEl.style.display);
 };
 
 export default FormView;
