@@ -18,11 +18,14 @@ FormView.showResetBtn = function (show = true) {
 };
 
 FormView.bindEvents = function () {
-  this.inputEl.addEventListener("keyup", event -> this.onKeyup(event) );
+  this.inputEl.addEventListener("keyup", (event) => this.onKeyup(event));
 };
 
-FormView.onKeyup = function () {
+FormView.onKeyup = function (e) {
+  const enter = 13;
   this.showResetBtn(this.inputEl.value.length);
+  if (e.keyCode !== enter) return;
+  this.emit("@submit", { input: this.inputEl.value });
 };
 
 export default FormView;
